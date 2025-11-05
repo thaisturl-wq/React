@@ -1,25 +1,29 @@
 import styled from 'styled-components';
-import React from 'react';
 
-// Mantemos os estilos básicos de container do Card
+
 const StyledCard = styled.div`
   background: white;
-  padding: 15px; /* Reduzi um pouco o padding para o novo conteúdo */
+  padding: 30px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Estilo de card mais genérico */
-  max-width: 350px; /* Largura reduzida para caber vários na galeria */
-  margin: 15px; /* Margem para separar os cards na galeria */
-  
-  /* Removemos o 'text-align: center;' para melhor layout do conteúdo interno */
+  box-shadow: 0 4px 12px rgba(42, 184, 189, 0.1);
+  max-width: 400px;
+  margin: 20px auto;
+  text-align: center;
 `;
 
-// Mantemos o CardContent como um wrapper de estilo
+const AvatarBebe = styled.img`
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 5px solid #542b96ff;
+`;
+
 const CardContent = styled.div`
-  /* Estilos internos permanecem, mas serão mais genéricos agora */
   h2 {
     color: #115196ff;
     margin-bottom: 10px;
-    font-size: 1.5em;
   }
   p {
     color: #555;
@@ -28,12 +32,20 @@ const CardContent = styled.div`
   }
 `;
 
-// O componente agora aceita a prop 'children'
-const Card = ({ children }) => {
+
+const Card = ({ title, description, imageUrl, status }) => {
   return (
     <StyledCard>
-      {/* O conteúdo específico será renderizado aqui */}
-      {children}
+      <AvatarBebe 
+        src={imageUrl} 
+        alt="Personalização Engraçada do Bebê" 
+      />
+      
+      <CardContent>
+        <h2>{title}</h2>
+        <p>{description}</p>
+        <p>Status: {status}</p>
+      </CardContent>
     </StyledCard>
   );
 };

@@ -25,8 +25,7 @@ const Label = styled.label`
   font-weight: bold;
   color: #333;
 `;
-
-// O componente de Input funcional
+ 
 const Input = ({ label, type, value, onChange, id, required = false }) => {
   return (
     <InputGroup>

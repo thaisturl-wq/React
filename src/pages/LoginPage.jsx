@@ -4,8 +4,7 @@ import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import Button from '../components/Button.jsx';
 import Input from '../components/Input.jsx';
-import { FaBaby } from "react-icons/fa";;
-;
+import { FaBaby } from "react-icons/fa";
 
 
 const LoginContainer = styled.div`
